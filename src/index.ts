@@ -5,6 +5,7 @@ const port = 3000;
 
 app.use(express.json());
 
+
 // Endpoint untuk menambah produk
 app.post('/products', (req: Request, res: Response) => {
     const { name, price } = req.body;
@@ -16,6 +17,20 @@ app.post('/products', (req: Request, res: Response) => {
 app.get('/products', (req: Request, res: Response) => {
     // Logika untuk mendapatkan semua produk
     res.send('List of products');
+});
+// Endpoint untuk register user
+app.post('/register', (req: Request, res: Response) => {
+    const { username, password } = req.body;
+    // Logika untuk register user
+    res.send('User registered');
+});
+
+// Endpoint untuk login user
+app.post('/login', (req: Request, res: Response) => {
+    const { username, password } = req.body;
+    // Logika untuk login user
+    res.send('User logged in');
+
 });
 
 app.listen(port, () => {
